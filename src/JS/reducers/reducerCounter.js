@@ -1,26 +1,23 @@
-import { DECREMENT, INCREMENT, RESET } from "../constants/actionsTypes";
+import { INCREMENT, DECREMENT, RESET } from "../constants/actionsTypes";
 
+const initalState = {
+  count: 0,
+};
 
-const intialState={
-    count:0
-}
+const reducerCounter = (state = initalState, action) => {
+  switch (action.type) {
+    case INCREMENT:
+      return { ...state, count: state.count + 1 };
 
+    case DECREMENT:
+      return { ...state, count: state.count - 1 };
 
-const reducerCounter=(state=intialState, action)=>{
-    switch (action.type) {
-        case INCREMENT:
-            return {...state, count:state.count+1};
-        
-        case DECREMENT:
-        return {...state, count: state.count-1}
+    case RESET:
+      return { ...state, count: 0 };
 
-        case RESET:
-            return {...state, count:0}
+    default:
+      return state;
+  }
+};
 
-    
-        default:
-            return state;
-    }
-}
-
-export default reducerCounter
+export default reducerCounter;

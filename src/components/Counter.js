@@ -16,7 +16,6 @@ const Counter = (props) => {
     </div>
   );
 };
-
 const mapStateToProps = (state) => {
   return {
     count: state.reducerCounter.count,
@@ -33,4 +32,7 @@ const mapStateToProps = (state) => {
 //     increment
 // };
 
-export default connect(mapStateToProps, { increment, decrement, reset })(Counter);
+// export default connect(mapStateToProps, mapDispatchToProps)(Counter);
+export default connect(mapStateToProps, { increment, decrement, reset })(
+  Counter
+);

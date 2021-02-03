@@ -1,4 +1,4 @@
-import { DECREMENT, INCREMENT, RESET } from "../constants/actionsTypes";
+import { INCREMENT, DECREMENT, RESET } from "../constants/actionsTypes";
 
 export const increment = () => {
   return {
@@ -12,11 +12,8 @@ export const decrement = () => {
   };
 };
 
-export const reset=()=>{
-    return{
-        type:RESET
-    }
-}
-
-
-
+export const reset = () => {
+  return {
+    type: RESET,
+  };
+};
